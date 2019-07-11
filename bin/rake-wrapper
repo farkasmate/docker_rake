@@ -1,0 +1,11 @@
+#!/bin/ash
+
+if [ -n "${QUIET}" ]
+then
+  bundle_install_args='--quiet'
+else
+  set -x
+fi
+
+bundle install $bundle_install_args
+bundle exec rake "${@}"

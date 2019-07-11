@@ -1,0 +1,12 @@
+---
+version: '3.5'
+
+services:
+  rake:
+    image: 'matefarkas/rake-2.4'
+    entrypoint: '/usr/local/bin/rake-wrapper'
+    environment:
+      - 'QUIET'
+    volumes:
+      - '${PWD}:/bundle:rw'
+    command: '${RAKE_ARGS}'

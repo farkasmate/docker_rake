@@ -1,0 +1,10 @@
+#!/bin/ash
+
+err() { echo "${@}" 1>&2; }
+
+err 'This container is intended to run inside a Ruby project directory with Rake tasks.'
+err ''
+err 'Run: RAKE_ARGS=--tasks docker-compose up'
+err ''
+err 'With the following docker-compose.yaml:'
+cat /docker-compose.yaml
